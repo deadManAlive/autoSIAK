@@ -5,7 +5,7 @@
     margin: 10px 4px 10px 4px;
     font-size: 16px;
     cursor: pointer;
-    border-radius: 4px;
+    border-radius: 8px;
     text-decoration: none;
     transition: transform 0.2s ease-in-out;
     user-select: none;
@@ -31,7 +31,28 @@
 .main-container {
     display: flex;
     flex-direction: column;
-    align-content: space-between;
-    align-items: center;
-    padding: 10px;
+    align-content: center;
+    align-items: stretch;
+    justify-content: space-evenly;
+    width: 120px;
+    text-align: center;
+    font-family: monospace;
+}
+
+#cqueries {
+    background-color: khaki;
+    border-radius: 8px;
+    padding-bottom: 10px;
+}
+
+#tqueries {
+    background-color:lightsalmon;
+    border-radius: 8px;
+    margin-top: 10px;
+    padding-bottom: 10px;
+}
+
+#buttondiv {
+    border-radius: 8px;
+    margin-top: 10px;
 }
