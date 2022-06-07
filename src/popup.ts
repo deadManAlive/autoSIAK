@@ -1,22 +1,16 @@
-let changeColor = <HTMLElement>document.getElementById("colorPreview");
+//popup + main algorithm(?)
 
-console.log(changeColor);
+let runButton = <HTMLElement>document.getElementById("runAgent");
 
-chrome.storage.sync.get("color", ({ color }) => {
-    changeColor.style.backgroundColor = color;
-});
+runButton.addEventListener("click", async () =>{
+    let [tab] = await chrome.tabs.query({active: true, currentWindow: true});
 
-function setPageBackgroundColor() {
-    chrome.storage.sync.get("color", ({ color }) => {
-        document.body.style.backgroundColor = color;
+    chrome.scripting.executeScript({
+        target: {tabId: <number>tab.id},
+        func: () => {
+            chrome.storage.sync.get(["codeQuery", "termQuery"], ({codeQuery, termQuery}) => {
+                console.log("queries: code -> ", codeQuery, " term --> ", termQuery);
+            });
+        }
     });
-}
-
-changeColor.addEventListener("click",async () => {
-   let [tab] = await chrome.tabs.query({ active: true, currentWindow: true });
-   
-   chrome.scripting.executeScript({
-       target: {tabId: <number>tab.id},
-       func: setPageBackgroundColor,
-   })
 });
