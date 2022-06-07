@@ -1,4 +1,6 @@
-let changeColor = <HTMLElement>document.getElementById("changeColor");
+let changeColor = <HTMLElement>document.getElementById("colorPreview");
+
+console.log(changeColor);
 
 chrome.storage.sync.get("color", ({ color }) => {
     changeColor.style.backgroundColor = color;

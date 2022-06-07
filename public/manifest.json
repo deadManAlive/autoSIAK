@@ -1,5 +1,6 @@
 {
     "name": "autoSIAK",
+    "author": "deadManAlive",
     "description": "Automated SIAK-NG Agent",
     "version": "0.0.1",
     "manifest_version": 3,

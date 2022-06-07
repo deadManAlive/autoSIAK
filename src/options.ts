@@ -3,14 +3,14 @@ let selectedClassName = "current";
 const presetButtonColors = ["#3aa757", "#e8453c", "#f9bb2d", "#4688f1"];
 
 function handleButtonClick(event: MouseEvent) {
-    let current = ((event.target as HTMLElement).parentElement as HTMLElement).querySelector(`.${selectedClassName}`);
+    let current = (<HTMLElement>(<HTMLElement>event.target).parentElement).querySelector(`.${selectedClassName}`);
 
-    if (current && current !== (event.target as HTMLElement)) {
+    if (current && current !== <HTMLElement>event.target) {
         current.classList.remove(selectedClassName);
     }
 
-    let color = (event.target as HTMLElement).dataset.color;
-    (event.target as HTMLElement).classList.add(selectedClassName);
+    let color = (<HTMLElement>event.target).dataset.color;
+    (<HTMLElement>event.target).classList.add(selectedClassName);
     chrome.storage.sync.set({ color });
 }
 
