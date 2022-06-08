@@ -2,16 +2,16 @@
 
 // queries
 //  query by class code
-let codeQuery = ["ENEE607106", "ENEE605024", "ENEE603012"];
+let code_query = ["ENEE607106", "ENEE605024", "ENEE603012", "ENEE605031"];
 //  query by term
-let termQuery = [5];
+let term_query = [5];
 
 // init
 chrome.runtime.onInstalled.addListener(() => {
     //property set
     chrome.storage.sync.set({
-        codeQuery,
-        termQuery,
+        code_query: code_query,
+        term_query: term_query,
     });
     // url check
     chrome.declarativeContent.onPageChanged.removeRules(undefined, () => {
