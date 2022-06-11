@@ -1,10 +1,16 @@
 // service worker
 
+import "dotenv/config";
+
 // queries
 //  query by class code
 let code_query = ["ENEE607106", "ENEE605024", "ENEE603012", "ENEE605031"];
 //  query by term
 let term_query = [5];
+
+//debug
+const uname = process.env.SIAK_USERNAME;
+const pswrd = process.env.SIAK_PASSWORD;
 
 // init
 chrome.runtime.onInstalled.addListener(() => {

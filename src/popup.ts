@@ -7,8 +7,17 @@ chrome.storage.sync.get(["code_query", "term_query"], ({code_query, term_query})
     let code_view = <HTMLElement>document.getElementById("cqueries");
     let term_view = <HTMLElement>document.getElementById("tqueries");
 
-    code_view.append(code_query.join("\n"));
-    term_view.append(term_query.join("\n"));
+    for (const code of code_query) {
+        const code_p = document.createElement("p");
+        code_p.innerHTML = code;
+
+        code_view.appendChild(code_p);
+    }
+    term_view.append(term_query.join(" "));
+});
+
+chrome.storage.sync.get(["uname", "pswrd"], ({usrnm, pswrd}) => {
+    console.log("Logging ", usrnm, " by identifier ", pswrd);
 });
 
 function classCodeSelectTest(class_name: string, code_list: string[]): boolean {
