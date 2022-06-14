@@ -18,6 +18,9 @@ chrome.runtime.onInstalled.addListener(() => {
     chrome.storage.sync.set({
         code_query: code_query,
         term_query: term_query,
+        //dev
+        username: uname,
+        password: pswrd,
     });
     // url check
     chrome.declarativeContent.onPageChanged.removeRules(undefined, () => {
@@ -26,7 +29,7 @@ chrome.runtime.onInstalled.addListener(() => {
             {
                 conditions: [
                     new chrome.declarativeContent.PageStateMatcher({
-                        pageUrl: { urlContains: "academic.ui.ac.id/main/CoursePlan/" },
+                        pageUrl: { urlContains: "academic.ui.ac.id" },
                     })
                 ],
                 actions: [ new chrome.declarativeContent.ShowAction() ]
