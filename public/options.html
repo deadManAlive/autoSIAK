@@ -1,13 +1,44 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <link rel="stylesheet" href="button.css">
+        <link rel="stylesheet" href="options.css">
+        <script defer src="options.js"></script>
     </head>
     <body>
-        <div id="buttonDiv"></div>
-        <div>
-            <p>Choose a different background color!</p>
+        <div class="main-container">
+            <h1>
+                autoSIAK
+            </h1>
+            <div id="credentials">
+                <h2>
+                    Credentials
+                </h2>
+                <div id="unamediv">
+                    <h3>Username</h3>
+                    <input id="username" type="text">
+                </div>
+                <div id="pworddiv">
+                    <h3>Password</h3>
+                    <input id="password" type="password">
+                </div>
+                <div id="csbutton">
+                    <button id="credsubmit">Submit</button>
+                </div>
+            </div>
+            <div id="queries">
+                <h2>
+                    Queries
+                </h2>
+                <div id="cqueries">
+                    <h3>Codes</h3>
+                </div>
+                <div id="tqueries">
+                    <h3>Terms</h3>
+                </div>
+                <div id="qsbutton">
+                    <button id="querysubmit">Submit</button>
+                </div>
+            </div>
         </div>
-        <script src="options.js"></script>
     </body>
 </html>

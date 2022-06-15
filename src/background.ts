@@ -1,16 +1,14 @@
 // service worker
 
-import "dotenv/config";
-
 // queries
 //  query by class code
 let code_query = ["ENEE607106", "ENEE605024", "ENEE603012", "ENEE605031"];
 //  query by term
 let term_query = [5];
 
-//debug
-const uname = process.env.SIAK_USERNAME;
-const pswrd = process.env.SIAK_PASSWORD;
+// placeholder
+let username = "USERNAME";
+let password = "PASSWORD";
 
 // init
 chrome.runtime.onInstalled.addListener(() => {
@@ -18,9 +16,8 @@ chrome.runtime.onInstalled.addListener(() => {
     chrome.storage.sync.set({
         code_query: code_query,
         term_query: term_query,
-        //dev
-        username: uname,
-        password: pswrd,
+        username: username,
+        password: password,
     });
     // url check
     chrome.declarativeContent.onPageChanged.removeRules(undefined, () => {
